@@ -16,6 +16,15 @@
 --43 Select the departments that have no employees
      select d.name from Department d left join Employee e on d.department_id = e.department_id
      where e.emp_id is null;
+--44. Select employees names who share department with 'John Doe'.
+      select name
+      from Employee
+      where department_id = (
+            select department_id
+            from Employee
+            where name = 'John Doe'
+            );
+
 
 
 
