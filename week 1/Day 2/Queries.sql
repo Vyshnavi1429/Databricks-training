@@ -45,6 +45,14 @@
     where salary < (select max(salary) from Employee);
 
 --49. Select the department with the most employees.
+      select d.name, count(e.emp_id) as emp_count from Department d
+      join Employee e on d.department_id = e.department_id
+      group by d.name
+      order by emp_count desc
+      limit 1;
+
+--50. Select employees who earn more than the everage salary of their dwpartment.
+
 
 
 
