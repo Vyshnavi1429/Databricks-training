@@ -40,6 +40,12 @@
       where salary > (select avg(salary) from Employee);
 
 --48. Select the second highest salary from yhe Employee table.
+    select max(salary) as second_highest_salary
+    from Employee
+    where salary < (select max(salary) from Employee);
+
+--49. Select the department with the most employees.
+
 
 
 
