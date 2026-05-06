@@ -52,6 +52,16 @@
       limit 1;
 
 --50. Select employees who earn more than the everage salary of their dwpartment.
+      select e.name, e.salary
+      from Employee e
+      where e.salary > (
+          select avg(e2.salary)
+          from Employee e2
+          where e2.department_id = e.department_id
+          );
+
+--51. Select the nth highest salary(for example ,3rd Highest)
+
 
 
 
