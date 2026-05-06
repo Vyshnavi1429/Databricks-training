@@ -35,6 +35,12 @@
       where salary = (select max(salary) from Employee);
 
 --47. Select employees whose salary is above the average salary.
+      select name, salary
+      from Employee
+      where salary > (select avg(salary) from Employee);
+
+--48. Select the second highest salary from yhe Employee table.
+
 
 
 
