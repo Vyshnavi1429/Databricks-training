@@ -29,6 +29,13 @@
       on e.department_id = d.department_id group by d.name
       order by avg_salary desc
       limit 1;
+--46. Select the employee with the highest salary.
+      select name, salary
+      from Employee
+      where salary = (select max(salary) from Employee);
+
+--47. Select employees whose salary is above the average salary.
+
 
 
 
