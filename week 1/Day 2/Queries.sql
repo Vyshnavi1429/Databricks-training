@@ -24,6 +24,12 @@
             from Employee
             where name = 'John Doe'
             );
+--45. Select the department name with the highest average salary
+      select d.name, avg(e.salary) as avg_salary from Employee join Department d
+      on e.department_id = d.department_id group by d.name
+      order by avg_salary desc
+      limit 1;
+
 
 
 
