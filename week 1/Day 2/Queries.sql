@@ -272,4 +272,3 @@ WHERE city like 'B%';
 SELECT emp_name,department
 FROM Employees
 WHERE department like '%s';
-
