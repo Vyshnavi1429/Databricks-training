@@ -1,39 +1,39 @@
---Display all employee details.
+--1 Display all employee details.
 select * from Employees;
 
---Display only employee names and salaries.
+--2 Display only employee names and salaries.
 select emp_name,salary
 from Employees;
 
---Display employee names and departments.
+--3 Display employee names and departments.
 select emp_name,department
 from Employees;
 
---Display all employees from the IT department.
+--4 Display all employees from the IT department.
 select emp_name,department
 from Employees
 where department='IT';
 
---Display employee names and experience.
+--5 Display employee names and experience.
 select emp_name,experience
 from Employees;
 
---Find employees with salary greater than 70000.
+--6 Find employees with salary greater than 70000.
 select emp_name,salary
 from Employees
 where salary > 70000;
 
---Find employees working in Hyderabad.
+--7 Find employees working in Hyderabad.
 select emp_name,city
 from Employees
 where city='Hyderabad';
 
---Find employees with experience less than 4 years.
+--8 Find employees with experience less than 4 years.
 select emp_name,experience
 from Employees
 where experience<4;
 
---Find employees from Finance department.
+--9 Find employees from Finance department.
 select emp_name,department
 from Employees
 where department='Finance';
@@ -187,3 +187,89 @@ where city='Hyderabad' or city='Bangalore';
 select *
 from Employees
 where department='HR' and experience< 3;
+
+--39 Find employees with salary greater than 60000 OR experience greater than 6
+select *
+from Employees
+where salary > 60000 or experience > 6;
+
+--40 Find employees NOT from Sales department.
+select *
+from Employees
+where department <> 'Sales';
+
+--41 Find employees working in ('Hyderabad', 'Mumbai').
+SELECT *
+FROM Employees
+WHERE city IN ('Hyderabad', 'Mumbai');
+
+--42 Find employees whose department IN ('IT', 'Finance').
+SELECT *
+FROM Employees
+WHERE department IN ('IT', 'Finance');
+
+--43 Find employees whose city NOT IN ('Chennai', 'Pune').
+SELECT *
+FROM Employees
+WHERE city NOT IN ('Chennai', 'Pune');
+
+--44 Find employees whose salary IN (45000, 75000, 91000).
+SELECT *
+FROM Employees
+WHERE salary  IN (45000, 75000, 91000);
+
+--45 Find employees whose department NOT IN ('HR', 'Sales').
+SELECT *
+FROM Employees
+WHERE department not  IN ('HR', 'Sales');
+
+--46 Find employees with salary BETWEEN 50000 AND 80000.
+SELECT emp_name,salary
+FROM Employees
+WHERE salary between  50000 AND 80000;
+
+--47 Find employees with experience BETWEEN 3 AND 6.
+SELECT emp_name,experience
+FROM Employees
+WHERE experience between  3 AND 6;
+
+--48 Find employees whose emp_id BETWEEN 105 AND 112.
+SELECT *
+FROM Employees
+WHERE emp_id between 105 and 112;
+
+--49 Find employees with salary NOT BETWEEN 40000 AND 60000.
+SELECT emp_name,salary
+FROM Employees
+WHERE salary not between 40000 AND 60000;
+
+--50 Find employees with experience BETWEEN 2 AND 4.
+SELECT emp_name,experience
+FROM Employees
+WHERE experience not between 2 AND 4;
+
+--51 Find employees whose names start with 'R'.
+SELECT emp_name
+FROM Employees
+WHERE emp_name like 'R%';
+
+--52 Find employees whose names end with 'a'.
+SELECT emp_name
+FROM Employees
+WHERE emp_name like '%a';
+
+--53 Find employees whose names contain 'v'.
+SELECT emp_name
+FROM Employees
+WHERE emp_name like '%v%';
+
+--54 Find employees whose city starts with 'B'.
+SELECT emp_name,city
+FROM Employees
+WHERE city like 'B%';
+
+--55 Find employees whose department ends with 's'.
+SELECT emp_name,department
+FROM Employees
+WHERE department like '%s';
+
