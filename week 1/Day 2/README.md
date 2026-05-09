@@ -1,67 +1,175 @@
-# SQL Practice - Day 2
+# Employee SQL Queries
 
 ## Overview
+This project contains basic to intermediate SQL queries performed on an `Employees` table.
 
-In Day 2, I practiced advanced SQL queries using three tables: Employee, Department, and Project. The goal was to understand how to solve real-world problems using SQL.
+The queries demonstrate the use of:
 
-## What I Did
+- SELECT
+- WHERE
+- GROUP BY
+- HAVING
+- ORDER BY
+- LIMIT
+- DISTINCT
+- IN
+- BETWEEN
+- LIKE
+- Aggregate Functions
 
-I wrote queries to:
+---
 
-* Find employees who are not assigned to any project
+# Table Structure
 
-* Count how many projects each employee’s department is working on
+```sql
+CREATE TABLE Employees (
+    emp_id INT,
+    emp_name VARCHAR(100),
+    department VARCHAR(50),
+    salary DECIMAL(10,2),
+    experience INT,
+    city VARCHAR(50)
+);
+```
 
-* Find departments that do not have any employees
+---
 
-* Get employees who work in the same department as a specific person
+# Topics Covered
 
-* Find the department with the highest average salary
+## 1. Basic SELECT Queries
+- Display all employee details
+- Display employee names and salaries
+- Display employee names and departments
+- Display employee names and experience
 
-* Find employees with the highest and second highest salaries
+---
 
-* Compare employee salaries with:
+## 2. WHERE Clause Queries
+- Employees from IT department
+- Employees working in Hyderabad
+- Employees with salary greater than 70000
+- Employees with experience less than 4 years
+- Employees from Finance department
 
-  * overall average salary
-  * department average salary
+---
 
-* Find employees based on conditions like:
+## 3. Aggregate Functions
+- Total salary department-wise
+- Average salary in each department
+- Maximum salary in each department
+- Minimum experience department-wise
+- Count employees in each city
 
-  * hired on the same date
-  * older than others in a department
+---
 
-* Work with project-related data:
+## 4. GROUP BY & HAVING
+- Departments having more than 3 employees
+- Departments where average salary is greater than 60000
+- Cities having more than 2 employees
+- Departments where total salary is greater than 200000
+- Departments where maximum salary is above 90000
 
-  * departments with multiple projects
-  * employees working in those departments
+---
 
-* Use date conditions:
+## 5. Sorting & Limiting Records
+- Top 5 highest paid employees
+- Top 3 employees with highest experience
+- Top 2 salaries from Finance department
+- Top 4 employees from Hyderabad
+- Top 1 highest salary employee
 
-  * employees hired in 2020
-  * employees hired in the last 2 years
+---
 
-* Perform calculations like:
+## 6. DISTINCT Queries
+- Distinct department names
+- Distinct city names
+- Distinct salary values
+- Distinct department and city combinations
+- Distinct experience values
 
-  * total salary
-  * average salary
-  * employee count per department
+---
 
-## Key Concepts I Learned
+## 7. Comparison Operators
+- Salary >= 80000
+- Experience <= 3
+- Salary <> 45000
+- Salary < 50000
+- Experience > 5
 
-* How to use **JOIN** to combine multiple tables
-* How to use **LEFT JOIN** to include missing data
-* How to use **GROUP BY** to group records
-* How to use **HAVING** to filter grouped results
-* How to use **subqueries** to solve complex conditions
-* Difference between **WHERE** and **HAVING**
-* Handling **NULL values** correctly
+---
 
-## Tools Used
+## 8. Logical Operators
+- AND condition
+- OR condition
+- NOT condition
 
-* DB Fiddle (online SQL platform)
+Examples:
+- IT employees with salary > 70000
+- Employees from Hyderabad OR Bangalore
+- Employees NOT from Sales department
 
-## Conclusion
+---
 
-Day 2 helped me understand how to write more advanced SQL queries by combining multiple concepts. I can now solve real-world problems using joins, subqueries, and aggregation.
+## 9. IN & NOT IN Operators
+- Employees working in Hyderabad or Mumbai
+- Employees from IT or Finance
+- Employees not from Chennai or Pune
+- Employees with specific salary values
 
-Next, I will learn advanced topics like window functions and ranking.
+---
+
+## 10. BETWEEN Operator
+- Salary between 50000 and 80000
+- Experience between 3 and 6
+- Employee IDs between 105 and 112
+
+---
+
+## 11. LIKE Operator
+- Names starting with 'R'
+- Names ending with 'a'
+- Names containing 'v'
+- Cities starting with 'B'
+- Departments ending with 's'
+
+---
+
+# SQL Concepts Used
+
+| Concept | Description |
+|----------|-------------|
+| SELECT | Retrieve data from table |
+| WHERE | Filter records |
+| GROUP BY | Group rows with same values |
+| HAVING | Filter grouped records |
+| ORDER BY | Sort records |
+| LIMIT | Restrict number of rows |
+| DISTINCT | Remove duplicate values |
+| IN | Match multiple values |
+| BETWEEN | Filter within range |
+| LIKE | Pattern matching |
+
+---
+
+# Database Compatibility
+
+These queries work in:
+
+- MySQL
+- PostgreSQL
+- SQLite
+- MariaDB
+
+> Note: `LIMIT` syntax may vary in SQL Server (`TOP` is used instead).
+
+---
+
+# Example Query
+
+```sql
+SELECT emp_name, salary
+FROM Employees
+WHERE salary > 70000;
+```
+
+---
